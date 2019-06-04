@@ -1,0 +1,34 @@
+.pop-zoom{
+    position: absolute;
+    right: -34px;
+    top: 43%;
+    color: #9E9E9E;
+    box-shadow: 3px 0 4px #ccc;
+    padding: 4px;
+    width: 25px;
+    cursor: pointer;
+}
+.pop-hide{
+    right: auto;
+    left: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #ccc;
+    height: 110px;
+}
+.pop-zoom i{
+    font-size: 20px;
+    color: #46A1E8;
+}
+.u-popup .el-radio-button{
+    margin:0 10px;
+}
+.u-popup .el-radio-button__inner{
+    border-left: none !important;
+    border-radius: 4px !important;
+    padding: 8px 12px;
+    border: none;
+    background-color: #F8F8FA;
+}
+.u-popup .el-button--mini{
+    margin: 0 10px;
+}

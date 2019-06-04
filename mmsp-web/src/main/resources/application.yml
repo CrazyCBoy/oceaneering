@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: dev
+server:
+  port: 8090
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  path: config/logback-spring.xml
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://10.20.69.74:33067/oceandata?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Hongkong
+    username: root
+    password: mysql@123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+#  redis:
+#    host: 10.0.66.237
+#    database: 2
+#    port: 6379
+#    lettuce:
+#      pool:
+#        max-idle: 8
+#        max-active: 8
+#        max-wait: -1ms
+#        min-idle: 0
+#      shutdown-timeout: 100ms
+
+---
+spring:
+  profiles: prod

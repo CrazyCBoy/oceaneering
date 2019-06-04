@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+
+    <context targetRuntime="MyBatis3" id="context">
+
+    <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+    <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+    <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+
+
+    <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+
+    <property value="Example$" name="searchString"/>
+
+    <property value="Criteria" name="replaceString"/>
+
+</plugin>
+
+
+    <commentGenerator>
+
+    <property value="true" name="suppressAllComments"/>
+
+    <property value="true" name="suppressDate"/>
+
+</commentGenerator>
+
+    <!-- !!!! Database Configurations !!!! -->
+
+    <jdbcConnection password="mysql@123456" userId="root" connectionURL="jdbc:mysql://10.20.69.74:33067/oceandata?nullCatalogMeansCurrent=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver"/>
+
+    <javaTypeResolver>
+
+    <property value="false" name="forceBigDecimals"/>
+
+</javaTypeResolver>
+
+    <!-- !!!! Model Configurations !!!! -->
+
+    <javaModelGenerator targetProject="src/main/java" targetPackage="cn.webyun.mmspweb.entity">
+
+    <property value="false" name="enableSubPackages"/>
+
+    <property value="true" name="trimStrings"/>
+
+</javaModelGenerator>
+
+    <!-- !!!! Mapper XML Configurations !!!! -->
+
+
+
+    <sqlMapGenerator targetProject="src/main/resources" targetPackage="cn.webyun.mmspweb.mapper">
+
+    <property value="false" name="enableSubPackages"/>
+
+</sqlMapGenerator>
+
+    <!-- !!!! Mapper Interface Configurations !!!! -->
+    <!--
+     type="XMLMAPPER"：表示生成java基础映射的接口，这些接口将会依赖于生成的xml文件
+        type="ANNOTATEDMAPPER"：表示生成java基础映射的接口，这些接口将会依赖于注解
+    -->
+    <javaClientGenerator type="ANNOTATEDMAPPER" targetProject="src/main/java" targetPackage="cn.webyun.mmspweb.mapper">
+
+    <property value="false" name="enableSubPackages"/>
+
+</javaClientGenerator>
+    <!-- !!!! Table Configurations !!!! -->
+    <!--domainObjectName数据库表对应的数据对象名称-->
+    <table domainObjectName="Typhoon" tableName="typhoon_info">
+
+    <property value="true" name="ignoreQualifiersAtRuntime"/>
+
+    <property value="false" name="modelOnly"/>
+    <!--指定自增加以及id-->
+    <generatedKey identity="true" sqlStatement="JDBC" column="id"/>
+
+</table>
+
+</context>
+
+</generatorConfiguration>
